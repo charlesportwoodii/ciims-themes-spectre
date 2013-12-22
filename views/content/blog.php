@@ -100,7 +100,7 @@
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<?php echo Yii::t('SpectreTheme', '{{heythere}} Before leaving a comment you must {{signup}} or {{register}}', array(
 							'{{heythere}}' => CHtml::tag('strong', array(), Yii::t('SpectreTheme', 'Hey there!')),
-							'{{signup}}' => CHtml::link(Yii::t('SpectreTheme', 'login'), $this->createUrl('/login')),
+							'{{signup}}' => CHtml::link(Yii::t('SpectreTheme', 'login'), $this->createUrl('/login?next=' . $content->slug)),
 							'{{register}}' => CHtml::link(Yii::t('SpectreTheme', 'signup'), $this->createUrl('/register'))
 						)); ?>
 					</div>
