@@ -1,11 +1,11 @@
 ### Spectre
 
-Spectre is a lightweight theme for CiiMS. You can add Spectre to CiiMS by logging into the dashboard, navigating to the ```Appearance``` section of your settings menu, and adding ```charlesportwoodii/spectre``` into the repo box.
+Spectre is a lightweight theme for CiiMS. You can add Spectre to CiiMS by logging into the dashboard, navigating to the ```Appearance``` section of your settings menu and searching for ```spectre```.
 
 #### License
 
 [MIT LICENSE](http://opensource.org/licenses/MIT)
-Copyright (c) 2013 Charles R. Portwood II
+Copyright (c) 2013-2014 Charles R. Portwood II
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
