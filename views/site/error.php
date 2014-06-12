@@ -1,4 +1,5 @@
-<div class="login-container">
-		<h1 class="content-subhead"><?php echo Yii::t('SpectreTheme', 'Error {{code}}', array('{{code}}' => $error['code'])); ?></h1>
-		<p class="alert"><?php echo $error['message']; ?></p>
+<div class="modal-container">
+	<h1 class="content-subhead"><?php echo Yii::t('SpectreThem.maine', 'Error {{code}}', array('{{code}}' => $error['code'])); ?></h1>
+	<p><?php echo CHtml::encode($error['message']); ?></p>
 </div>
+<div class="clearfix"></div>
