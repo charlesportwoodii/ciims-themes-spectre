@@ -1,0 +1,32 @@
+{
+    "name": "ciims-themes/spectre",
+    "description": "Spectre is a lightweight theme for CiiMS that utilizes purecss.io",
+    "license": "MIT",
+    "type" : "drupal-theme",
+    "keywords": [
+        "ciims",
+        "CiiMS",
+    	"theme",
+    	"spectre"
+    ],
+    "authors": [
+        {
+            "name": "Charles R. Portwood II",
+            "email": "charlesportwoodii@ethreal.net",
+            "homepage": "https://www.erianna.com",
+            "role": "Lead Developer"
+        }
+    ],
+    "support": {
+        "email": "charlesportwoodii@ethreal.net",
+        "issues": "https://github.com/charlesportwoodii/ciims-themes-spectre/issues",
+        "wiki" : "https://github.com/charlesportwoodii/ciims-themes-spectre/wiki/_pages",
+        "source" : "https://github.com/charlesportwoodii/ciims-themes-spectre"
+    },
+    "homepage": "https://www.ciims.org",
+    "require": {
+	"facebook/php-sdk": "v3.2.3",
+	"kertz/twitteroauth": "dev-master",
+	"google/apiclient": "dev-master"
+    }
+}
