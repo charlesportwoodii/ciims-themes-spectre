@@ -13,12 +13,10 @@
 				'{{author}}' => CHtml::link(CHtml::encode($content->author->displayName), $this->createUrl("/profile/{$content->author->id}/"), array('class' => 'post-author')),
 				'{{category}}' => CHtml::link(CHtml::encode($content->category->name), Yii::app()->createUrl($content->category->slug), array('class' => 'post-category post-category-design'))
 			)); ?>
-			<time class="timeago" datetime="<?php echo date(DATE_ISO8601, strtotime($content->published)); ?>">
-				<?php echo Cii::formatDate($content->published); ?>
-			</time>
+			<?php echo Cii::timeago($content->published); ?>
         </p>
         <div class="post-description">
-			<?php $md = new CMarkdownParser; echo strip_tags($md->safeTransform($content->extract), '<h1><h2><h3><h4><h5><6h><p><b><strong><i>'); ?>
+			<?php echo strip_tags($md->safeTransform($content->extract), '<h1><h2><h3><h4><h5><6h><p><b><strong><i>'); ?>
         </div>
 
 		<a class="read-more-icon" style="float:right" href="<?php echo $this->createUrl('/' . $content->slug); ?>" rel="bookmark">
@@ -27,7 +25,3 @@
 	</div>
     <div style="clear:both;"><br /></div>
 </div>
-
-<?php $this->widget('ext.timeago.JTimeAgo', array(
-    'selector' => ' .timeago',
-)); ?>
