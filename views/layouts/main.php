@@ -1,19 +1,19 @@
+<?php $cs = Yii::app()->clientScript; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo Yii::app()->language; ?>">
 	<head>
+		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 		<meta name="viewport" content="initial-scale=1.0">
 	    <meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no">
 	    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="/favicon.ico" type="image/x-icon">
-	    <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-	    <?php Yii::app()->clientScript->registerMetaTag('text/html; charset=UTF-8', 'Content-Type', 'Content-Type', array(), 'Content-Type')
-                                      ->registerMetaTag($this->keywords, 'keywords', 'keywords', array(), 'keywords')
-                                      ->registerMetaTag(strip_tags($this->params['meta']['description']), 'description', 'description', array(), 'description')
-                                      ->registerCssFile($this->asset . (YII_DEBUG ? '/css/spectre.css' : '/css/spectre.min.css'))
-                                      ->registerCssFile($this->asset . (YII_DEBUG ? '/font-awesome/css/font-awesome.css' : '/font-awesome/css/font-awesome.min.css'))
-		                              ->registerCoreScript('jquery')
-								      ->registerScriptFile($this->asset .(YII_DEBUG ? '/js/spectre.js' : '/js/spectre.min.js'))
-								      ->registerScript('load', '$(document).ready(function() { SpectreTheme.load(); });', CClientScript::POS_END); ?>
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<?php $cs->registerMetaTag('text/html; charset=UTF-8', 'Content-Type', 'Content-Type', array(), 'Content-Type')
+                 ->registerMetaTag($this->keywords, 'keywords', 'keywords', array(), 'keywords')
+                 ->registerMetaTag(strip_tags($this->params['meta']['description']), 'description', 'description', array(), 'description')
+                 ->registerCssFile($this->asset . (YII_DEBUG ? '/dist/theme.css' : '/dist/theme.min.css'))
+				 ->registerScriptFile($this->asset .(YII_DEBUG ? '/dist/theme.js' : '/dist/theme.min.js'))
+				 ->registerScript('load', '$(document).ready(function() { Theme.load(); });', CClientScript::POS_END); ?>
 	</head>
 	<body>		
 		<main class="pure-g-r" id="layout">
