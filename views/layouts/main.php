@@ -31,7 +31,7 @@
 		                <ul>
 		                	<li>Copyright &copy <?php echo date('Y'); ?> <?php echo Cii::getConfig('name', Yii::app()->name); ?></li>
 		                	<li>
-		                		<?php echo Yii::t('SpecreTheme.main', 'Proudly Published with {{CiiMS}} - {{Spectre}}', array(
+		                		<?php echo Yii::t('SpectreTheme.main', 'Proudly Published with {{CiiMS}} - {{Spectre}}', array(
 		                			'{{CiiMS}}' => CHtml::link('CiiMS', 'https://www.ciims.org/'),
 		                			'{{Spectre}}' => CHtml::link('Spectre', 'https://github.com/charlesportwoodii/spectre')
 		                		)); ?>
