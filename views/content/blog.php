@@ -1,11 +1,7 @@
 <?php $content = &$data; ?>
-<?php $meta = Content::model()->parseMeta($content->metadata); ?>
 <div class="content no-padding" data-attr-id="<?php echo $content->id; ?>">
 	<div class="post">
-		<?php if (Cii::get(Cii::get($meta, 'blog-image', array()), 'value', '') != ""): ?>
-			<p style="text-align:center;"><?php echo CHtml::image(Yii::app()->baseUrl . $meta['blog-image']['value'], NULL, array('class'=>'image')); ?></p>
-		<?php endif; ?>
-
+		<?php $this->renderPartial('//site/attached-content', array('meta' => Content::model()->parseMeta($content->id))); ?>
 		<div class="post-inner">
 			<div class="post-header">
 				<h2 class="post-title"><?php echo CHtml::link($content->title, Yii::app()->createUrl($content->slug)); ?></h2>
@@ -15,7 +11,7 @@
 
 			<p class="post-meta pull-left">
 				<?php echo Yii::t('SpectreTheme.main', 'By {{author}} under {{category}}', array(
-					'{{author}}' => CHtml::link(CHtml::encode($content->author->displayName), $this->createUrl("/profile/{$content->author->id}/"), array('class' => 'post-author')),
+					'{{author}}' => CHtml::link(CHtml::encode($content->author->username), $this->createUrl("/profile/{$content->author->id}/"), array('class' => 'post-author')),
 					'{{category}}' => CHtml::link(CHtml::encode($content->category->name), Yii::app()->createUrl($content->category->slug), array('class' => 'post-category post-category-design'))
 				)); ?>
 				<?php echo Cii::timeago($content->published); ?>
@@ -41,10 +37,12 @@
 	</div>
 </div>
 
-<div class="post">
-	<div class="post-inner">
-		<?php $this->widget('ext.cii.widgets.comments.CiiCommentWidget'); ?>
+<?php if ($content->commentable): ?>
+	<div class="post">
+		<div class="post-inner" style="margin-top: 20px;">
+			<?php $this->widget('ext.cii.widgets.comments.CiiCommentWidget'); ?>
+		</div>
 	</div>
-</div>
 
-<?php Yii::app()->getClientScript()->registerScript('loadBlog', '$(document).ready(function() { Theme.loadBlog(' . $content->id . '); });'); ?>
+	<?php Yii::app()->getClientScript()->registerScript('loadBlog', '$(document).ready(function() { Theme.loadBlog(' . $content->id . '); });'); ?>
+<?php endif; ?>

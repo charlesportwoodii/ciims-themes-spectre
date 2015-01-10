@@ -1,8 +1,5 @@
-<?php $meta = Content::model()->parseMeta($content->metadata); ?>
 <div class="post">
-	<?php if (Cii::get(Cii::get($meta, 'blog-image', array()), 'value', '') != ""): ?>
-		<p style="text-align:center;"><?php echo CHtml::image(Yii::app()->baseUrl . $meta['blog-image']['value'], NULL, array('class'=>'image')); ?></p>
-	<?php endif; ?>
+	<?php $this->renderPartial('//site/attached-content', array('meta' => Content::model()->parseMeta($content->id))); ?>
 	<div class="post-inner">
 		<div class="post-header">
 			<img class="post-avatar" src="<?php echo $content->author->gravatarImage(48); ?>" height="48" width="48">
@@ -10,7 +7,7 @@
 		</div>
 		<p class="post-meta">
 			<?php echo Yii::t('SpectreTheme.main', 'By {{author}} under {{category}}', array(
-				'{{author}}' => CHtml::link(CHtml::encode($content->author->displayName), $this->createUrl("/profile/{$content->author->id}/"), array('class' => 'post-author')),
+				'{{author}}' => CHtml::link(CHtml::encode($content->author->username), $this->createUrl("/profile/{$content->author->id}/"), array('class' => 'post-author')),
 				'{{category}}' => CHtml::link(CHtml::encode($content->category->name), Yii::app()->createUrl($content->category->slug), array('class' => 'post-category post-category-design'))
 			)); ?>
 			<?php echo Cii::timeago($content->published); ?>
