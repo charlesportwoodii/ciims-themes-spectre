@@ -2,16 +2,16 @@
     <div class="post">
         <div class="post-inner">
             <div class="post-header">
-                <h2 style="text-align: center;"><?php echo Yii::t('themes.spectre.main.main', "No Results Found"); ?></h2>
+                <h2 style="text-align: center;"><?php echo Yii::t('themes.spectre.main', "No Results Found"); ?></h2>
             </div>
 
-        <p style="text-align:center;"><?php echo Yii::t('themes.spectre.main.main', "Sorry, we tried looking but we didn't find a match for the specified criteria. Try refining your search."); ?></p>
+        <p style="text-align:center;"><?php echo Yii::t('themes.spectre.main', "Sorry, we tried looking but we didn't find a match for the specified criteria. Try refining your search."); ?></p>
         </div>
     </div>
 <?php endif; ?>
 
 <form class="pure-form pure-form-stacked">
-    <input type="text" name="q" id="q" value="<?php echo Cii::get($_GET, 'q', NULL); ?>" placeholder="<?php echo Yii::t('themes.spectre.main.main', 'Type to search, then press enter'); ?>" class="pure-u-1" />
+    <input type="text" name="q" id="q" value="<?php echo Cii::get($_GET, 'q', NULL); ?>" placeholder="<?php echo Yii::t('themes.spectre.main', 'Type to search, then press enter'); ?>" class="pure-u-1" />
 </form>
 
 <div id="posts">

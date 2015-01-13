@@ -1,5 +1,5 @@
 <div class="modal-container">
-    <h1 class="content-subhead"><?php echo Yii::t('themes.spectre.main.main', 'Create a new Account'); ?></h1>
+    <h1 class="content-subhead"><?php echo Yii::t('themes.spectre.main', 'Create a new Account'); ?></h1>
     <?php $form=$this->beginWidget('cii.widgets.CiiActiveForm', array(
         'id'					=> 'login-form',
         'focus'					=> 'input[type="text"]:first',
@@ -12,8 +12,8 @@
 
     <?php if (!Yii::app()->user->isGuest): ?>
         <div class="alert alert-info">
-            <?php echo Yii::t('themes.spectre.main.main', "{{headsup}} Looks like you're already logged in as {{email}}", array(
-                    '{{headsup}}' => CHtml::tag('strong', array(), Yii::t('themes.spectre.main.main', 'Heads Up!')),
+            <?php echo Yii::t('themes.spectre.main', "{{headsup}} Looks like you're already logged in as {{email}}", array(
+                    '{{headsup}}' => CHtml::tag('strong', array(), Yii::t('themes.spectre.main', 'Heads Up!')),
                     '{{email}}'   => CHtml::tag('strong', array(), Yii::app()->user->email),
                 )); ?>
          </div>
@@ -47,12 +47,12 @@
 
 
         <div class="pull-left">
-            <?php echo CHtml::link(Yii::t('themes.spectre.main.main', 'login'), $this->createUrl('/login')); ?>
+            <?php echo CHtml::link(Yii::t('themes.spectre.main', 'login'), $this->createUrl('/login')); ?>
             <span> | </span>
-            <?php echo CHtml::link(Yii::t('themes.spectre.main.main', 'forgot'), $this->createUrl('/forgot')); ?>
+            <?php echo CHtml::link(Yii::t('themes.spectre.main', 'forgot'), $this->createUrl('/forgot')); ?>
         </div>
 
-        <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('themes.spectre.main.main', 'Submit'); ?></button>
+        <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('themes.spectre.main', 'Submit'); ?></button>
         <div class="clearfix"></div>
     <?php endif; ?>
 
@@ -60,7 +60,7 @@
     <?php if (Yii::app()->user->isGuest): ?>
         <?php if (count(Cii::getHybridAuthProviders()) >= 1): ?>
         <div class="clearfix" style="border-bottom: 1px solid #aaa; margin: 15px;"></div>
-            <span class="login-form-links"><?php echo Yii::t('themes.spectre.main.main', 'Or register with one of these social networks'); ?></span>
+            <span class="login-form-links"><?php echo Yii::t('themes.spectre.main', 'Or register with one of these social networks'); ?></span>
         <?php endif; ?>
         <div class="clearfix"></div>
         <div class="social-buttons">
