@@ -1,6 +1,6 @@
 <div class="modal-container">
-    <h1 class="content-subhead"><?php echo Yii::t('SpectreTheme.main', 'Create Your Account'); ?></h1>
-    <p class="pull-text-left"><?php echo Yii::t('SpectreTheme.main', 'To accept your invitation, set your account details here.'); ?></p>
+    <h1 class="content-subhead"><?php echo Yii::t('themes.spectre.main.main', 'Create Your Account'); ?></h1>
+    <p class="pull-text-left"><?php echo Yii::t('themes.spectre.main.main', 'To accept your invitation, set your account details here.'); ?></p>
     <?php $form = $this->beginWidget('cii.widgets.CiiActiveForm', array(
         'id'					=>	'login-form',
         'registerPureCss'       => false,
@@ -15,13 +15,13 @@
                 <?php echo $form->errorSummary($model); ?>
             </div>
         <?php endif; ?>
-        <?php echo $form->textField($model, 'email', array('class' => 'pure-u-1', 'placeholder' => Yii::t('SpectreTheme.main', 'Email Address'))); ?>
-        <?php echo $form->textField($model, 'firstName', array('class' => 'pure-u-1', 'placeholder' => Yii::t('SpectreTheme.main', 'First Name'))); ?>
-        <?php echo $form->textField($model, 'lastName', array('class' => 'pure-u-1', 'placeholder' => Yii::t('SpectreTheme.main', 'Last Name'))); ?>
-        <?php echo $form->textField($model, 'displayName', array('class' => 'pure-u-1', 'placeholder' => Yii::t('SpectreTheme.main', 'Display Name'))); ?>
-        <?php echo $form->passwordField($model, 'password', array('class' => 'pure-u-1', 'placeholder' => Yii::t('SpectreTheme.main', 'Password'))); ?>
+        <?php echo $form->textField($model, 'email', array('class' => 'pure-u-1', 'placeholder' => Yii::t('themes.spectre.main.main', 'Email Address'))); ?>
+        <?php echo $form->textField($model, 'firstName', array('class' => 'pure-u-1', 'placeholder' => Yii::t('themes.spectre.main.main', 'First Name'))); ?>
+        <?php echo $form->textField($model, 'lastName', array('class' => 'pure-u-1', 'placeholder' => Yii::t('themes.spectre.main.main', 'Last Name'))); ?>
+        <?php echo $form->textField($model, 'displayName', array('class' => 'pure-u-1', 'placeholder' => Yii::t('themes.spectre.main.main', 'Display Name'))); ?>
+        <?php echo $form->passwordField($model, 'password', array('class' => 'pure-u-1', 'placeholder' => Yii::t('themes.spectre.main.main', 'Password'))); ?>
     <div>
-        <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('SpectreTheme.main', 'Submit'); ?></button>
+        <button type="submit" class="pull-right pure-button pure-button-primary"><?php echo Yii::t('themes.spectre.main.main', 'Submit'); ?></button>
         <div class="clearfix"></div>
 
     </div>

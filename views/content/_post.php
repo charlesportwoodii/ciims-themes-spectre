@@ -6,7 +6,7 @@
 			<h2 class="post-title"><?php echo CHtml::link($content->title, Yii::app()->createUrl($content->slug)); ?></h2>
 		</div>
 		<p class="post-meta">
-			<?php echo Yii::t('SpectreTheme.main', 'By {{author}} under {{category}}', array(
+			<?php echo Yii::t('themes.spectre.main.main', 'By {{author}} under {{category}}', array(
 				'{{author}}' => CHtml::link(CHtml::encode($content->author->username), $this->createUrl("/profile/{$content->author->id}/"), array('class' => 'post-author')),
 				'{{category}}' => CHtml::link(CHtml::encode($content->category->name), Yii::app()->createUrl($content->category->slug), array('class' => 'post-category post-category-design'))
 			)); ?>
@@ -17,7 +17,7 @@
         </div>
 
 		<a class="read-more-icon" style="float:right" href="<?php echo $this->createUrl('/' . $content->slug); ?>" rel="bookmark">
-			<?php echo Yii::t('SpectreTheme', 'Read more'); ?>
+			<?php echo Yii::t('themes.spectre.main', 'Read more'); ?>
 		</a>
 	</div>
     <div style="clear:both;"><br /></div>

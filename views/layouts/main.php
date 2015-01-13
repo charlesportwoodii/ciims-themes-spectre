@@ -31,7 +31,7 @@
 		                <ul>
 		                	<li>Copyright &copy <?php echo date('Y'); ?> <?php echo Cii::getConfig('name', Yii::app()->name); ?></li>
 		                	<li>
-		                		<?php echo Yii::t('SpectreTheme.main', 'Proudly Published with {{CiiMS}} - {{Spectre}}', array(
+		                		<?php echo Yii::t('themes.spectre.main.main', 'Proudly Published with {{CiiMS}} - {{Spectre}}', array(
 		                			'{{CiiMS}}' => CHtml::link('CiiMS', 'https://www.ciims.org/'),
 		                			'{{Spectre}}' => CHtml::link('Spectre', 'https://github.com/charlesportwoodii/spectre')
 		                		)); ?>
@@ -47,7 +47,7 @@
 					<footer class="footer">
 			            <div class="pure-menu pure-menu-horizontal pure-menu-open">
 			                <ul>
-			                	<li><?php echo CHtml::link(Yii::t('SpectreTheme.main', 'Search'), $this->createUrl('/search')); ?></li>
+			                	<li><?php echo CHtml::link(Yii::t('themes.spectre.main.main', 'Search'), $this->createUrl('/search')); ?></li>
 			                </ul>
 			            </div>
 			        </footer>
