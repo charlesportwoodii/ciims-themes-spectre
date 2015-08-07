@@ -21,11 +21,18 @@
                 )); ?>
          </div>
     <?php else: ?>
-        <?php echo $form->errorSummary($model); ?>
-
-        <?php echo $form->textField($model, 'username', array('class' => 'pure-u-1', 'id'=>'email', 'placeholder'=> $model->GetAttributeLabel('username') )); ?>
-        <?php echo $form->passwordField($model, 'password', array('class' => 'pure-u-1', 'id'=>'password', 'placeholder'=> $model->GetAttributeLabel('password') )); ?>
-
+        <?php if ($model->needsTwoFactorAuth() === false): ?>
+            <?php echo $form->errorSummary($model); ?>
+            <?php echo $form->textField($model, 'username', array('class' => 'pure-u-1', 'id'=>'email', 'placeholder'=> $model->GetAttributeLabel('username') )); ?>
+            <?php echo $form->passwordField($model, 'password', array('class' => 'pure-u-1', 'id'=>'password', 'placeholder'=> $model->GetAttributeLabel('password') )); ?>
+        <?php else: ?>
+            <div class="alert alert-info">
+                <?php echo Yii::t('themes.spectre.main', 'This account is protected by a two factor authentication code. Please enter your two factor authentication code to proceede'); ?>
+            </div>
+            <?php echo $form->textField($model, 'username', array('class' => 'pure-u-1', 'id'=>'email', 'placeholder'=> $model->GetAttributeLabel('username') )); ?>
+            <?php echo $form->passwordField($model, 'password', array('class' => 'pure-u-1', 'id'=>'password', 'placeholder'=> $model->GetAttributeLabel('password') )); ?>
+            <?php echo $form->textField($model, 'twoFactorCode', array('class' => 'pure-u-1', 'id'=>'email', 'placeholder'=> $model->getAttributeLabel('twoFactorCode') )); ?>
+        <?php endif; ?>
         <div class="pull-left">
             <?php echo CHtml::link(Yii::t('themes.spectre.main', 'register'), $this->createUrl('/register')); ?>
             <span> | </span>
